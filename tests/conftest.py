@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TEST_DATABASE_URL = (
     os.getenv("TEST_DATABASE_URL")
     or os.getenv("DATABASE_URL")
-    or "postgresql+psycopg://ipsensitive:ipsensitive_local_dev@127.0.0.1:45432/ipsensitive"
+    or "postgresql+psycopg://ipsensitive:ipsensitive_local_dev@127.0.0.1:55432/ipsensitive"
 )
 # migrations/env.py prefers DATABASE_URL; align it with the test database.
 os.environ["DATABASE_URL"] = TEST_DATABASE_URL
