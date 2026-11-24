@@ -1,0 +1,164 @@
+{
+  "dataset_id": "ip-sensitive-eval-v1",
+  "version": 1,
+  "fictional": true,
+  "notes": "Fictional evaluation set for the Personal IP sensitive re-review. Every person, enterprise, brand and number is invented for this ticket; no real personal or enterprise information is used. Segments are the raw drafts: the pipeline masks them before any model call. Gold quotes are written against the masked text the model sees (placeholders included).",
+  "documents": [
+    {
+      "content_id": "c-101",
+      "title": "从车间主任到行业顾问",
+      "segments": [
+        {"seq": 0, "text": "我在临江精工做了十二年，从车间主任做到生产副总。"},
+        {"seq": 1, "text": "去年公司还没对外公布的产能是每月1800台，这个数字我从没在公开场合讲过。"},
+        {"seq": 2, "text": "老同事周海涛去年查出肾上有问题，现在在家休养。"},
+        {"seq": 3, "text": "有人劝我照着云杉科技的产品线做一套，换个包装就能卖。"},
+        {"seq": 4, "text": "我们的训练营保证收益翻倍，零风险，名额只剩三个。"},
+        {"seq": 5, "text": "如果你也在制造业转型，欢迎留言交流，邮箱 hello@example.com。"}
+      ],
+      "gold": [
+        {"seq": 1, "quote": "还没对外公布的产能", "flag_type": "unpublished_business"},
+        {"seq": 2, "quote": "周海涛去年查出肾上有问题", "flag_type": "third_party_personal"},
+        {"seq": 3, "quote": "照着云杉科技的产品线做一套", "flag_type": "unlicensed_brand"},
+        {"seq": 4, "quote": "保证收益翻倍", "flag_type": "other"},
+        {"seq": 4, "quote": "零风险", "flag_type": "other"}
+      ]
+    },
+    {
+      "content_id": "c-102",
+      "title": "供应链那点事",
+      "segments": [
+        {"seq": 0, "text": "上周和三家供应商吃饭，聊到明年招标的底价。"},
+        {"seq": 1, "text": "A 厂的采购经理姓吴，手机号 13812345678，他私下给我的报价比公开低 8%。"},
+        {"seq": 2, "text": "这条供应链的小道消息，我不好说得太细。"},
+        {"seq": 3, "text": "另外，某竞品公司还没公开的融资消息，是投资人告诉我的。"},
+        {"seq": 4, "text": "内容发出去之前，我会再确认一遍。"}
+      ],
+      "gold": [
+        {"seq": 0, "quote": "明年招标的底价", "flag_type": "unpublished_business"},
+        {"seq": 1, "quote": "采购经理姓吴，手机号 [PII:PHONE]", "flag_type": "third_party_personal"},
+        {"seq": 1, "quote": "他私下给我的报价比公开低 8%", "flag_type": "unpublished_business"},
+        {"seq": 3, "quote": "某竞品公司还没公开的融资消息", "flag_type": "unpublished_business"}
+      ]
+    },
+    {
+      "content_id": "c-103",
+      "title": "品牌联名避坑",
+      "segments": [
+        {"seq": 0, "text": "联名款最容易踩的坑，是把别人的 logo 直接拿来用。"},
+        {"seq": 1, "text": "市面上很多仿款，做工差不多，价格却只有三分之一。"},
+        {"seq": 2, "text": "去年我们和蓝桨咖啡的联名海报，未经授权就用了对方的商标。"},
+        {"seq": 3, "text": "这事后来赔了钱，也上了行业群。"}
+      ],
+      "gold": [
+        {"seq": 0, "quote": "把别人的 logo 直接拿来用", "flag_type": "unlicensed_brand"},
+        {"seq": 1, "quote": "仿款", "flag_type": "unlicensed_brand"},
+        {"seq": 2, "quote": "未经授权就用了对方的商标", "flag_type": "unlicensed_brand"}
+      ]
+    },
+    {
+      "content_id": "c-104",
+      "title": "客户案例怎么写",
+      "segments": [
+        {"seq": 0, "text": "写客户案例之前，先把授权拿到手，急事可以打 13900002222。"},
+        {"seq": 1, "text": "上次分享里我提到某银行风控总监李工，说他去年被内部调查。"},
+        {"seq": 2, "text": "客户的内部数据显示，他们今年的退货率是 4.2%。"},
+        {"seq": 3, "text": "这些内容发出去之前都要过法务。"},
+        {"seq": 4, "text": "案例里只写结果，不写细节。"}
+      ],
+      "gold": [
+        {"seq": 1, "quote": "某银行风控总监李工，说他去年被内部调查", "flag_type": "third_party_personal"},
+        {"seq": 2, "quote": "客户的内部数据", "flag_type": "unpublished_business"}
+      ]
+    },
+    {
+      "content_id": "c-105",
+      "title": "个人 IP 运营复盘（长文，两个批次）",
+      "segments": [
+        {"seq": 0, "text": "做个人 IP 的第一年，我踩过不少坑，今天按时间顺序复盘一下。"},
+        {"seq": 1, "text": "一开始我以为只要把专业内容写清楚就够了。"},
+        {"seq": 2, "text": "内部会议的结论是明年把广告预算砍半。"},
+        {"seq": 3, "text": "后来发现，同一篇稿子换个标题，阅读量能差三倍。"},
+        {"seq": 4, "text": "选题比文笔重要，这是我踩过最大的坑。"},
+        {"seq": 5, "text": "第二个坑是更新频率，断更三个月粉丝掉了一半。"},
+        {"seq": 6, "text": "我现在的做法是每周固定两更，雷打不动。"},
+        {"seq": 7, "text": "今天先聊到这里，下次讲讲选题。"},
+        {"seq": 8, "text": "内容形式也很关键，长文、短视频、直播各有受众。"},
+        {"seq": 9, "text": "我的经验是长文适合建立信任，短视频适合拉新。"},
+        {"seq": 10, "text": "上个月内部价格表调整过一次，幅度不小。"},
+        {"seq": 11, "text": "很多人问我怎么找选题，其实答案藏在评论区里。"},
+        {"seq": 12, "text": "把读者的问题收集起来，就是一份现成的选题库。"},
+        {"seq": 13, "text": "还有一个方法是看同行，但不要照搬。"},
+        {"seq": 14, "text": "第三个坑是数据焦虑，天天盯后台没用。"},
+        {"seq": 15, "text": "我朋友陈立新家里的事，我不方便在公开内容里讲太细。"},
+        {"seq": 16, "text": "我把数据复盘改成每月一次，心态好了很多。"},
+        {"seq": 17, "text": "写作时间上，我用番茄钟，一次四十分钟。"},
+        {"seq": 18, "text": "写不下去的时候，先去散步，回来往往就顺了。"},
+        {"seq": 19, "text": "稿件发出前，我固定做三件事：读一遍、查事实、看过往内容。"},
+        {"seq": 20, "text": "读一遍是读出声，能发现很多拗口的句子。"},
+        {"seq": 21, "text": "查事实主要是核对数字和引用来源。"},
+        {"seq": 22, "text": "看过往内容是避免和以前的文章重复。"},
+        {"seq": 23, "text": "运营上，我建议先做私域，再做公域。"},
+        {"seq": 24, "text": "私域的好处是反馈快，能直接知道读者要什么。"},
+        {"seq": 25, "text": "公域的流量大，但转化路径长。"},
+        {"seq": 26, "text": "两条腿走路，别把鸡蛋放在一个篮子里。"},
+        {"seq": 27, "text": "团队协作上，我目前是一个人加一个兼职助理。"},
+        {"seq": 28, "text": "分工很简单：我负责内容，助理负责排版和发布。"},
+        {"seq": 29, "text": "这周先聊到这里。"},
+        {"seq": 30, "text": "有读者问我，能不能把某品牌的包装设计照抄一遍。"},
+        {"seq": 31, "text": "关于商业合作，我的原则是只接和内容相关的。"},
+        {"seq": 32, "text": "不相关的产品，给再多钱也不接。"},
+        {"seq": 33, "text": "顺便说一句，我们的服务百分之百保证有效。"},
+        {"seq": 34, "text": "今天就写到这里，下次聊聊怎么做年度选题规划。"}
+      ],
+      "gold": [
+        {"seq": 2, "quote": "内部会议的结论", "flag_type": "unpublished_business"},
+        {"seq": 10, "quote": "内部价格表调整过一次", "flag_type": "unpublished_business"},
+        {"seq": 15, "quote": "我朋友陈立新家里的事", "flag_type": "third_party_personal"},
+        {"seq": 30, "quote": "把某品牌的包装设计照抄一遍", "flag_type": "unlicensed_brand"},
+        {"seq": 33, "quote": "百分之百保证有效", "flag_type": "other"}
+      ]
+    },
+    {
+      "content_id": "c-106",
+      "title": "三种常见的合规雷区",
+      "segments": [
+        {"seq": 0, "text": "我做顾问这两年，见过三种常见的合规雷区。"},
+        {"seq": 1, "text": "第一种是把客户公司的未公开合同金额写进案例。"},
+        {"seq": 2, "text": "第二种是引用别人课程里的原话，当成自己的方法论。"},
+        {"seq": 3, "text": "第三种是把合作方的员工姓名和联系方式直接写出来。"}
+      ],
+      "gold": [
+        {"seq": 1, "quote": "未公开合同金额", "flag_type": "unpublished_business"},
+        {"seq": 2, "quote": "引用别人课程里的原话", "flag_type": "unlicensed_brand"}
+      ]
+    },
+    {
+      "content_id": "c-107",
+      "title": "招聘那篇稿子",
+      "segments": [
+        {"seq": 0, "text": "上个月我写了篇招聘观察，评论区吵翻了。"},
+        {"seq": 1, "text": "有个候选人在上家公司被裁员，简历上没写，我在文章里提了一句。"},
+        {"seq": 2, "text": "还有读者把前公司的未公开薪酬表发给我，附件里连身份证号都有：330106199001011234。"},
+        {"seq": 3, "text": "这些素材我最后都删了，只保留了行业层面的判断。"},
+        {"seq": 4, "text": "写这类内容，边界感比观点更重要。"}
+      ],
+      "gold": [
+        {"seq": 1, "quote": "在上家公司被裁员", "flag_type": "third_party_personal"},
+        {"seq": 2, "quote": "未公开薪酬表", "flag_type": "unpublished_business"}
+      ]
+    },
+    {
+      "content_id": "c-108",
+      "title": "带徒弟",
+      "segments": [
+        {"seq": 0, "text": "带过三个徒弟之后，我总结了一套带人方法。"},
+        {"seq": 1, "text": "第一个徒弟刚来时，我让他把竞品的广告语原样搬过来用。"},
+        {"seq": 2, "text": "他照做了，结果被同行截图挂了。"},
+        {"seq": 3, "text": "从那以后我要求所有人，任何素材都要拿到书面授权。"}
+      ],
+      "gold": [
+        {"seq": 1, "quote": "把竞品的广告语原样搬过来用", "flag_type": "unlicensed_brand"}
+      ]
+    }
+  ]
+}

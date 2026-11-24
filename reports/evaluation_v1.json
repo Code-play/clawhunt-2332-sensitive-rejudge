@@ -1,0 +1,288 @@
+{
+  "dataset_id": "ip-sensitive-eval-v1",
+  "dataset_version": 1,
+  "prompt_version": "ip.sensitive.v1",
+  "model_id": "fictional-ip-sensitive-model-v1",
+  "generated_at": "2026-11-24T09:21:53+00:00",
+  "thresholds": {
+    "recall": 0.95,
+    "precision": 0.6
+  },
+  "summary": {
+    "gold": 24,
+    "detected": 30,
+    "tp": 23,
+    "fp": 7,
+    "fn": 1,
+    "recall": 0.9583,
+    "precision": 0.7667,
+    "recall_span_only": 0.9583,
+    "precision_span_only": 0.7667,
+    "passes": true
+  },
+  "per_type": {
+    "third_party_personal": {
+      "gold": 5,
+      "detected": 9,
+      "tp": 5,
+      "recall": 1.0,
+      "precision": 0.5556
+    },
+    "unpublished_business": {
+      "gold": 9,
+      "detected": 9,
+      "tp": 9,
+      "recall": 1.0,
+      "precision": 1.0
+    },
+    "unlicensed_brand": {
+      "gold": 7,
+      "detected": 6,
+      "tp": 6,
+      "recall": 0.8571,
+      "precision": 1.0
+    },
+    "other": {
+      "gold": 3,
+      "detected": 6,
+      "tp": 3,
+      "recall": 1.0,
+      "precision": 0.5
+    }
+  },
+  "dropped_by_code": {
+    "low_confidence": 2,
+    "quote_not_found": 1
+  },
+  "context_seq_flags": 1,
+  "mask_replacements": 4,
+  "min_model_confidence": 0.5,
+  "documents": [
+    {
+      "content_id": "c-101",
+      "title": "从车间主任到行业顾问",
+      "segments": 6,
+      "batches": 1,
+      "gold": 5,
+      "detected": 6,
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 0.8333,
+      "recall_span_only": 1.0,
+      "precision_span_only": 0.8333,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [
+        {
+          "content_id": "c-101",
+          "seq": 5,
+          "quote": "[PII:EMAIL]",
+          "flag_type": "third_party_personal",
+          "detector": "rule",
+          "confidence": 1.0
+        }
+      ],
+      "dropped_by_code": {
+        "low_confidence": 1,
+        "quote_not_found": 1
+      }
+    },
+    {
+      "content_id": "c-102",
+      "title": "供应链那点事",
+      "segments": 5,
+      "batches": 1,
+      "gold": 4,
+      "detected": 4,
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 1.0,
+      "recall_span_only": 1.0,
+      "precision_span_only": 1.0,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [],
+      "dropped_by_code": {}
+    },
+    {
+      "content_id": "c-103",
+      "title": "品牌联名避坑",
+      "segments": 4,
+      "batches": 1,
+      "gold": 3,
+      "detected": 4,
+      "tp": 3,
+      "fp": 1,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 0.75,
+      "recall_span_only": 1.0,
+      "precision_span_only": 0.75,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [
+        {
+          "content_id": "c-103",
+          "seq": 3,
+          "quote": "这事后来赔了钱",
+          "flag_type": "other",
+          "detector": "model",
+          "confidence": 0.55
+        }
+      ],
+      "dropped_by_code": {}
+    },
+    {
+      "content_id": "c-104",
+      "title": "客户案例怎么写",
+      "segments": 5,
+      "batches": 1,
+      "gold": 2,
+      "detected": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 0.6667,
+      "recall_span_only": 1.0,
+      "precision_span_only": 0.6667,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [
+        {
+          "content_id": "c-104",
+          "seq": 0,
+          "quote": "[PII:PHONE]",
+          "flag_type": "third_party_personal",
+          "detector": "rule",
+          "confidence": 1.0
+        }
+      ],
+      "dropped_by_code": {
+        "low_confidence": 1
+      }
+    },
+    {
+      "content_id": "c-105",
+      "title": "个人 IP 运营复盘（长文，两个批次）",
+      "segments": 35,
+      "batches": 2,
+      "gold": 5,
+      "detected": 7,
+      "tp": 5,
+      "fp": 2,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 0.7143,
+      "recall_span_only": 1.0,
+      "precision_span_only": 0.7143,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [
+        {
+          "content_id": "c-105",
+          "seq": 7,
+          "quote": "今天先聊到这里",
+          "flag_type": "other",
+          "detector": "model",
+          "confidence": 0.52
+        },
+        {
+          "content_id": "c-105",
+          "seq": 29,
+          "quote": "这周先聊到这里",
+          "flag_type": "other",
+          "detector": "model",
+          "confidence": 0.6
+        }
+      ],
+      "dropped_by_code": {}
+    },
+    {
+      "content_id": "c-106",
+      "title": "三种常见的合规雷区",
+      "segments": 4,
+      "batches": 1,
+      "gold": 2,
+      "detected": 2,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1,
+      "recall": 0.5,
+      "precision": 0.5,
+      "recall_span_only": 0.5,
+      "precision_span_only": 0.5,
+      "model_status": "ok",
+      "missed": [
+        {
+          "content_id": "c-106",
+          "seq": 2,
+          "quote": "引用别人课程里的原话",
+          "flag_type": "unlicensed_brand"
+        }
+      ],
+      "false_positives": [
+        {
+          "content_id": "c-106",
+          "seq": 3,
+          "quote": "合作方的员工姓名和联系方式",
+          "flag_type": "third_party_personal",
+          "detector": "model",
+          "confidence": 0.5
+        }
+      ],
+      "dropped_by_code": {}
+    },
+    {
+      "content_id": "c-107",
+      "title": "招聘那篇稿子",
+      "segments": 5,
+      "batches": 1,
+      "gold": 2,
+      "detected": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 0.6667,
+      "recall_span_only": 1.0,
+      "precision_span_only": 0.6667,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [
+        {
+          "content_id": "c-107",
+          "seq": 2,
+          "quote": "[PII:ID]",
+          "flag_type": "third_party_personal",
+          "detector": "rule",
+          "confidence": 1.0
+        }
+      ],
+      "dropped_by_code": {}
+    },
+    {
+      "content_id": "c-108",
+      "title": "带徒弟",
+      "segments": 4,
+      "batches": 1,
+      "gold": 1,
+      "detected": 1,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "recall": 1.0,
+      "precision": 1.0,
+      "recall_span_only": 1.0,
+      "precision_span_only": 1.0,
+      "model_status": "ok",
+      "missed": [],
+      "false_positives": [],
+      "dropped_by_code": {}
+    }
+  ]
+}

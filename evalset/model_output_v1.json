@@ -1,0 +1,66 @@
+{
+  "model_id": "fictional-ip-sensitive-model-v1",
+  "prompt_version": "ip.sensitive.v1",
+  "notes": "Recorded answers of the fictional sensitive-content model used by the offline evaluation, the tests and the demo. They deliberately include one low-confidence guess, one quote that is not in the source, one entry with an unknown flag_type and one flag on a context segment, so the pipeline's drop rules are exercised. Objects are serialised to JSON text by the replay client; the c-103 answer is kept as a code-fenced string to exercise answer extraction.",
+  "responses": {
+    "c-101:0": {
+      "flags": [
+        {"seq": 1, "quote": "去年公司还没对外公布的产能是每月1800台", "flag_type": "unpublished_business", "reason": "未公开的产能数据", "confidence": 0.9},
+        {"seq": 2, "quote": "周海涛去年查出肾上有问题", "flag_type": "third_party_personal", "reason": "第三方健康隐私", "confidence": 0.92},
+        {"seq": 3, "quote": "照着云杉科技的产品线做一套", "flag_type": "unlicensed_brand", "reason": "疑似未授权模仿产品线", "confidence": 0.72},
+        {"seq": 4, "quote": "保证收益翻倍", "flag_type": "other", "reason": "承诺收益", "confidence": 0.8},
+        {"seq": 0, "quote": "我在临江精工做了十二年", "flag_type": "other", "reason": "个人经历表述", "confidence": 0.2},
+        {"seq": 5, "quote": "欢迎私信交流", "flag_type": "other", "reason": "互动引导", "confidence": 0.4}
+      ]
+    },
+    "c-102:0": {
+      "flags": [
+        {"seq": 0, "quote": "明年招标的底价", "flag_type": "unpublished_business", "reason": "未公开招标信息", "confidence": 0.7},
+        {"seq": 1, "quote": "采购经理姓吴，手机号 [PII:PHONE]", "flag_type": "third_party_personal", "reason": "第三方联系方式", "confidence": 0.85},
+        {"seq": 1, "quote": "他私下给我的报价比公开低 8%", "flag_type": "unpublished_business", "reason": "未公开报价信息", "confidence": 0.78},
+        {"seq": 3, "quote": "某竞品公司还没公开的融资消息", "flag_type": "unpublished_business", "reason": "未公开融资信息", "confidence": 0.8},
+        {"seq": 2, "quote": "小道消息", "flag_type": "gossip", "reason": "传闻", "confidence": 0.5}
+      ]
+    },
+    "c-103:0": "```json\n{\"flags\": [{\"seq\": 0, \"quote\": \"把别人的 logo 直接拿来用\", \"flag_type\": \"unlicensed_brand\", \"reason\": \"可能侵权他人标识\", \"confidence\": 0.7}, {\"seq\": 1, \"quote\": \"市面上很多仿款\", \"flag_type\": \"unlicensed_brand\", \"reason\": \"仿款风险\", \"confidence\": 0.75}, {\"seq\": 2, \"quote\": \"未经授权就用了对方的商标\", \"flag_type\": \"unlicensed_brand\", \"reason\": \"未授权使用商标\", \"confidence\": 0.8}, {\"seq\": 3, \"quote\": \"这事后来赔了钱\", \"flag_type\": \"other\", \"reason\": \"负面后果描述\", \"confidence\": 0.55}]}\n```",
+    "c-104:0": {
+      "flags": [
+        {"seq": 1, "quote": "某银行风控总监李工，说他去年被内部调查", "flag_type": "third_party_personal", "reason": "第三方任职与调查信息", "confidence": 0.88},
+        {"seq": 2, "quote": "客户的内部数据", "flag_type": "unpublished_business", "reason": "客户未公开经营数据", "confidence": 0.6},
+        {"seq": 3, "quote": "这些内容发出去之前都要过法务", "flag_type": "other", "reason": "内部流程描述", "confidence": 0.35}
+      ]
+    },
+    "c-105:0": {
+      "flags": [
+        {"seq": 2, "quote": "内部会议的结论", "flag_type": "unpublished_business", "reason": "未公开会议内容", "confidence": 0.7},
+        {"seq": 10, "quote": "内部价格表调整过一次", "flag_type": "unpublished_business", "reason": "未公开价格信息", "confidence": 0.65},
+        {"seq": 15, "quote": "我朋友陈立新家里的事", "flag_type": "third_party_personal", "reason": "第三方家庭隐私", "confidence": 0.61},
+        {"seq": 7, "quote": "今天先聊到这里", "flag_type": "other", "reason": "口语化过渡句", "confidence": 0.52}
+      ]
+    },
+    "c-105:1": {
+      "flags": [
+        {"seq": 30, "quote": "把某品牌的包装设计照抄一遍", "flag_type": "unlicensed_brand", "reason": "疑似抄袭包装设计", "confidence": 0.8},
+        {"seq": 33, "quote": "百分之百保证有效", "flag_type": "other", "reason": "绝对化与效果承诺", "confidence": 0.7},
+        {"seq": 29, "quote": "这周先聊到这里", "flag_type": "other", "reason": "口语化过渡句", "confidence": 0.6}
+      ]
+    },
+    "c-106:0": {
+      "flags": [
+        {"seq": 1, "quote": "客户公司的未公开合同金额", "flag_type": "unpublished_business", "reason": "未公开合同信息", "confidence": 0.8},
+        {"seq": 3, "quote": "合作方的员工姓名和联系方式", "flag_type": "third_party_personal", "reason": "第三方个人信息", "confidence": 0.5}
+      ]
+    },
+    "c-107:0": {
+      "flags": [
+        {"seq": 1, "quote": "有个候选人在上家公司被裁员", "flag_type": "third_party_personal", "reason": "第三方职业隐私", "confidence": 0.8},
+        {"seq": 2, "quote": "未公开薪酬表", "flag_type": "unpublished_business", "reason": "未公开薪酬数据", "confidence": 0.75}
+      ]
+    },
+    "c-108:0": {
+      "flags": [
+        {"seq": 1, "quote": "把竞品的广告语原样搬过来用", "flag_type": "unlicensed_brand", "reason": "疑似未经授权使用竞品素材", "confidence": 0.7}
+      ]
+    }
+  }
+}
